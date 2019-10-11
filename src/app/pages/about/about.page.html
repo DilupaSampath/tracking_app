@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Tracked List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="bg-profile" text-center padding>
+    <img src="assets/img/live train logo.png">
+  </div>
+
+  <ion-card class="bg-white" no-margin>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of trainData">
+          <ion-label>{{item.name}}</ion-label>
+          <ion-icon name="bus" *ngIf="item.selectedPoints !=undefined && item.selectedPoints.length > 0"></ion-icon>
+          <p *ngIf="item.selectedPoints ==undefined || item.selectedPoints.length == 0">Not Found</p>
+        </ion-item>
+      </ion-list>
+      
+      <!-- <h1 margin-bottom>
+        <ion-text color="primary"><strong>Ionic 4 Start Theme Application</strong></ion-text>
+      </h1> -->
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="secondary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+        <ion-text color="light">
+          <ion-text color="light" class="fw700">{{trainS}}</ion-text>
+        </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="notifications()">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge color="dark" slot="end">2</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="dark">
+      <form >
+          <ion-item>
+            	<ion-select [(ngModel)]="languageSelected" style="min-width: fit-content;color: white;font-family: serif;font-weight: bold;" placeholder="Select Train" (ionChange)=setLanguage($event)>
+                  <ion-select-option value="{{train._id}}" *ngFor="let train of trainData">{{train.name}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+      </form>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card no-margin class="no-radius">
+    <!-- <ion-item lines="none" color="medium">
+      <ion-button shape="round" fill="outline" size="small" color="primary" (click)="alertLocation()">
+        Settings
+        <ion-icon name="construct"></ion-icon>
+      </ion-button>
+    </ion-item> -->
+  </ion-card>
+
+  <ion-card class="bg-white">
+    <ion-img [src]="themeCover"></ion-img>
+    <ion-button expand="full" color="dark" margin shape="round" (click)="trackingStatus(1)">
+     Start Tracking
+    </ion-button>
+    <ion-button margin shape="round" expand="full" color="secondary" (click)="trackingStatus(3)" >
+      Stop Tracking
+    </ion-button>
+  </ion-card>
+
+
+  
+  <!-- <popmenu></popmenu> -->
+</ion-content>
+  
